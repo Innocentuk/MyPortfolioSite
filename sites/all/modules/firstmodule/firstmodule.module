@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * Implements hook_menu().
+ */
+function module_menu() {
+  $items['firstmodule-page'] = array(
+    'page callback' => 'module_page',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+$message = include 'page.php';
+
+function module_page() {
+   // return "Hello world";
+  return $message;
+}
